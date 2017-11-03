@@ -1,0 +1,28 @@
+<div class="train_station">
+    <ng-header name="站站查询"></ng-header>
+    <section class="search_station_main main">
+        <ul class="start_end">
+            <li ng-touchstart="chooseCity(start_station, true);">{{ start_station }}</li>
+            <li class="iconfont" ng-click="tabStation();">&#xe604;</li>
+            <li ng-touchstart="chooseCity(end_station, false);">{{ end_station }}</li>
+        </ul>
+        <div class="gt_sure">
+            <input type="checkbox" id="isgt" ng-model="is_high"/>
+            <label for="isgt">是否高铁</label>
+        </div>
+        <botton ng-click="routeGo();" locals="{{ [start_station + '@@' + end_station, 'station_locals'] }}">查询</botton>
+        <ul class="search_station_history">
+            <div class="del_history">
+                <p>输入记录</p>
+                <span class="iconfont" ng-click="clearLocalstroage();">&#xe615;</span>
+            </div>
+            <!-- 历史记录循环 -->
+            <li ng-repeat="item in history_station" ui-sref="show_station({ start: '{{ item[0] }}', end: '{{ item[1] }}', ishigh: false })">
+                <div class="iconfont">&#xe507;</div>
+                <div class="iconfont">{{ item[0] }}&#xe733;{{ item[1] }}</div>
+            </li>
+        </ul>
+    </section>
+    <ng-footer></ng-footer>
+    <ng-include-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-include-rite>
+</div>

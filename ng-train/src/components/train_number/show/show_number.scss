@@ -1,0 +1,74 @@
+.show_number{
+    height: 100%;
+    width: 100%;
+    .show_number_main{
+        & > ul > li{
+            width: 100%;
+            word-break: break-all;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            .base_message{
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                display: flex;
+                & > li{
+                    overflow: hidden;
+                }
+                & > li:nth-child(1){
+                    width: 10%;
+                }
+                & > li:nth-child(2){
+                    width: 19%;
+                }
+                & > li:nth-child(3){
+                    width: 14%;
+                }
+                & > li:nth-child(4){
+                    width: 14%;
+                }
+                & > li:nth-child(5){
+                    width: 10%;
+                }
+                & > li:nth-child(6){
+                    width: 22%;
+                }
+                & > li:nth-child(7){
+                    width: 11%;
+                }
+                .iconfont{
+                    -webkit-transition: all .3s;
+                    -moz-transition: all .3s;
+                    -ms-transition: all .3s;
+                    transition: all .3s;
+                }
+            }
+            .show_price{
+                .iconfont{
+                    transform: rotate(180deg);
+                }
+            }
+            .show_price + .price{
+                height: 80px;
+            }
+            .price{
+                height: 0px;
+                overflow: hidden;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                -ms-transition: all .3s;
+                transition: all .3s;
+                li {
+                    height: 40px;
+                    display: flex;
+                    line-height: 40px;
+                    border-top: 1px solid #e0e0e0;
+                    span{
+                        width: 20%;
+                    }
+                }
+            }
+        }
+
+    }
+}

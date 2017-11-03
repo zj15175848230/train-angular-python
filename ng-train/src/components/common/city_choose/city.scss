@@ -1,0 +1,132 @@
+
+.choose_city{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+    transform: translateY(100%);
+    //transform: translateX(0);
+    transition: all .3s;
+    &.show_choose_city{
+        transform: translateY(0);
+    }
+    .scroll{
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    .query_result{
+        position: absolute;
+        top: 55px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        z-index: 100002;
+        background: #fff;
+        overflow-y: scroll;
+        li {
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #e0e0e0;
+            text-indent: 20px;
+        }
+    }
+    .city_input{
+        text-align: center;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #666;
+        input {
+            height: 35px;
+            width: 75%;
+            font-size: 18px;
+            border: 1px solid #666;
+            text-indent: 10px;
+        }
+        a {
+            height: 100%;
+            width: 60px;
+            line-height: 55px;
+            font-size: 22px;
+        }
+        span{
+            position: absolute;
+            left: 82%;
+            top: 12px;
+            z-index: 10001;
+            font-size: 30px;
+        }
+    }
+    .now_city{
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        padding-left: 15px;
+        border-bottom: 1px solid #666;
+        background: #e0e0e0;
+        span{
+            font-size: 12px;
+        }
+    }
+    .latter_hash{
+        position: fixed;
+        top: 55px;
+        right: 0;
+        width: 30px;
+        text-align: center;
+        li{
+            color: blue;
+            &:nth-child(1), &:nth-child(2){
+                height: 20px!important;
+                font-size: 12px;
+                line-height: 20px!important;
+            }
+        }
+
+    }
+    .recommend_city{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 65px 0 15px;
+        justify-content: space-between;
+        text-align: center;
+        background: #e0e0e0;
+        div{
+            width: 100%;
+            text-align: left;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+        li{
+            width:  74px;
+            height: 30px;
+            line-height: 30px;
+            background: #e0e0e0;
+            border: 1px solid #666;
+            margin-bottom: 20px;
+        }
+    }
+    .all_city{
+        p{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .city_title{
+            background: #e0e0e0;
+        }
+    }
+}

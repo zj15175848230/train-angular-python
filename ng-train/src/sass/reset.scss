@@ -1,0 +1,43 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, input, button, a {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+img { max-width: 100%; border:none; }
+
+ul,ol { list-style: none; }
+
+a { text-decoration: none; outline: none; color: #666; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+th { font-weight: bold; vertical-align: bottom; }
+td { font-weight: normal; vertical-align: top; }
+
+input, select { vertical-align: middle; }
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+
+input {
+	-webkit-appearance: none;
+	border: none;
+	outline: none;
+	border: 1px solid #e0e0e0;
+}
+button {
+	outline: none;
+	border: none;
+}

@@ -1,0 +1,33 @@
+<div class="train_number">
+    <div class="search_train_number">
+        <input type="text" ng-model="search_number"/>
+        <a ui-sref="home">取消</a>
+        <span ng-if="search_show" ng-click="clearInput()" class="iconfont">&#xe617;</span>
+    </div>
+    <ul class="search_result" ng-if="search_show">
+        <!-- 车次查询结果 过滤器 过滤不符合条件的数据-->
+        <li ng-repeat="item in search_result | filterTrainNumber:search_number">
+            <div ng-if="item == '请输入正确的车次'" class="no_result">{{ item }}</div>
+            <a  ui-sref="show_number({ id: '{{ item }}' })"  ng-if="item !== '请输入正确的车次'" locals="{{ [item, 'history_h'] }}">
+                <div class="iconfont">&#xe507;</div>
+                <div>{{ item }}</div>
+            </a>
+            <div class="iconfont" ng-click="goToInput(item)"  ng-if="item !== '请输入正确的车次'">&#xe61a;</div>
+        </li>
+    </ul>
+    <ul class="search_history" ng-if="!search_show">
+        <div class="del_history">
+            <p>输入记录</p>
+            <span class="iconfont" ng-click="clearLocalstroage();">&#xe615;</span>
+        </div>
+        <!-- 历史记录 -->
+        <li ng-repeat="item in search_history">
+            <a  ui-sref="show_number({ id: '{{ item }}' })">
+                <div class="iconfont">&#xe507;</div>
+                <div>{{ item }}</div>
+            </a>
+            <div class="iconfont" ng-click="goToInput(item)">&#xe61a;</div>
+        </li>
+    </ul>
+
+</div>

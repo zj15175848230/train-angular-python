@@ -1,0 +1,60 @@
+<div class="show_number" ng-controller="show_number">
+    <ng-header name="{{ train_number }}"></ng-header>
+    <section class="show_number_main main" ng-pull-update>
+        <div class="cover" ng-class="{ show_cover: !train_info }"  ng-style="{ height: top_scroll + 'px' }">
+            <img src="./../../../images/qwe.gif" alt="" />
+        </div>
+        <ul>
+            <li>
+                <ul class="base_message">
+                    <li>站序</li>
+                    <li>站名</li>
+                    <li>到时</li>
+                    <li>发时</li>
+                    <li>停留</li>
+                    <li>用时</li>
+                    <li>票价</li>
+                </ul>
+            </li>
+            <!-- 循环展示当前车次的途径站 -->
+            <li ng-repeat="item in train_info">
+                <ul class="base_message"  ng-click="showPrice($index)" ng-class="{ show_price: $index == priceIndex }">
+                    <li>{{ item.sequenceno }}</li>
+                    <li>{{ item.station }}</li>
+                    <li>{{ item.arrivaltime }}</li>
+                    <li>{{ item.departuretime }}</li>
+                    <li>{{ item.stoptime }}分</li>
+                    <li>{{ item.costtime | timetohours }}</li>
+                    <li class="iconfont">&#xe603;</li>
+                </ul>
+                <ul class="price">
+                    <li>
+                        <span ng-if="train_info[train_info.length - 1].pricesw * 1 > 0">商务座</span>
+                        <span ng-if="train_info[train_info.length - 1].pricetd * 1 > 0">特等座</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyd * 1 > 0">一等座</span>
+                        <span ng-if="train_info[train_info.length - 1].priceed * 1 > 0">二等座</span>
+                        <span ng-if="train_info[train_info.length - 1].pricegr1 * 1 > 0">高级软卧</span>
+                        <span ng-if="train_info[train_info.length - 1].pricerw1 * 1 > 0">软卧</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyw1 * 1 > 0">硬卧</span>
+                        <span ng-if="train_info[train_info.length - 1].pricerz * 1 > 0">软座</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyz * 1 > 0">硬座</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyz * 1 > 0">无座</span>
+                    </li>
+                    <li>
+                        <span ng-if="train_info[train_info.length - 1].pricesw * 1 > 0">{{ item.pricesw | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].pricetd * 1 > 0">{{ item.pricetd | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyd * 1 > 0">{{ item.priceyd | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].priceed * 1 > 0">{{ item.priceed | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].pricegr1 * 1 > 0">{{ item.pricegr1 | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].pricerw1 * 1 > 0">{{ item.pricerw1 | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyw1 * 1 > 0">{{ item.priceyw1 | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].pricerz * 1 > 0">{{ item.pricerz | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyz * 1 > 0">{{ item.priceyz | price_no }}</span>
+                        <span ng-if="train_info[train_info.length - 1].priceyz * 1 > 0">{{ item.priceyz | price_no }}</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <ng-footer></ng-footer>
+</div>

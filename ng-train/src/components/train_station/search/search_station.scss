@@ -1,0 +1,99 @@
+.search_station_main{
+    .start_end{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > li:nth-child(odd){
+            width: 100px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+            padding: 5px 10px;
+        }
+        & > li:nth-child(2){
+            width: 60px;
+            text-align: center;
+        }
+        & > li:nth-child(3){
+            text-align: right;
+        }
+    }
+    .gt_sure{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        label{
+            position: relative;
+            padding-left: 25px;
+        }
+        label:before{
+            content: "";
+            display: block;
+            height: 16px;
+            width: 16px;
+            text-align: center;
+            line-height: 16px;
+            border: 1px solid #666;
+            position: absolute;
+            top: 2px;
+            left: 0;
+        }
+        input:checked + label:before {
+            content: "√";
+        }
+    }
+    & > botton{
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        width: 100px;
+        background: #ef3b4c;
+        color: #fff;
+        margin: auto;
+        border-radius: 10px 10px;
+        margin-top: 10px;
+    }
+    .search_station_history{
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        border-top: 1px solid #666;
+        .del_history{
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            line-height: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            p{
+                margin-left: 11px;
+            }
+            span{
+                margin-right: 11px;
+            }
+        }
+        li {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            & > div {
+                width: 40px;
+                text-align: center;
+                font-size: 16px;
+            }
+            & > div:nth-child(2){
+                flex-grow: 1;
+                text-align: left;
+            }
+        }
+    }
+}

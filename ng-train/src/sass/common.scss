@@ -1,0 +1,99 @@
+.ui_view_class{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	overflow-y: hidden;
+}
+//#ef3b4c
+a{
+	-webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+	-moz-tap-highlight-color:rgba(0, 0, 0, 0);
+	-ms-tap-highlight-color:rgba(0, 0, 0, 0);
+	-o-tap-highlight-color:rgba(0, 0, 0, 0);
+	tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.iconfont{
+	font-size: 22px;
+}
+.cover{
+	height: 0px;
+	background: #666;
+	text-align: center;
+	overflow: hidden;
+	transition: all .3s;
+	&.show_cover{
+		height: 50px;
+	}
+	img{
+		height: 50px;
+		width: 50px;
+	}
+}
+.main{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 40px;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+header{
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	color: #fff;
+	a{
+		color: #fff;
+	}
+	ul {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		line-height: 40px;
+		text-align: center;
+		& > li:first-child{
+			width: 50px;
+		}
+		& > li:nth-child(2){
+			flex-grow: 1;
+			padding-right: 20px;
+		}
+	}
+}
+footer {
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #e0e0e0;
+	ul {
+		height: 100%;
+		width: 100%;
+		display: -webkit-flex;
+		display: flex;
+		li{
+			width: 50%;
+			text-align: center;
+			line-height: 40px;
+			border-right: 1px solid #666;
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				&:hover {
+					background: #666;
+					color: #fff;
+				}
+			}
+		}
+		li:last-child{
+			border: none;
+		}
+	}
+}

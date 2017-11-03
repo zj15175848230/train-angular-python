@@ -1,0 +1,37 @@
+<div ng-controller="choose.city">
+    <div class="city_input">
+        <a ng-click="hideCity();" href="javascript:;" class="iconfont">&#xe664;</a>
+        <input type="text" ng-model="search_name" />
+    </div>
+    <!-- 搜索结果 -->
+    <ul class="query_result" ng-if="show_query_result">
+        <li ng-repeat="item in query_result" ng-click="confirmCity(item)">
+            {{ item }}
+        </li>
+    </ul>
+    <!-- 城市列表 -->
+    <div class="scroll">
+        <div class="now_city">
+            {{ now_city || "北京" }}
+            <span>当前城市</span>
+        </div>
+        <!-- 右侧导航 -->
+        <ul class="latter_hash">
+            <li ng-repeat="item in latter_hash" ng-touchstart="hashGo($index);" ng-style="{ height: hashHeight, lineHeight: hashHeight }">
+                {{ item }}
+            </li>
+        </ul>
+        <!-- 推荐城市 -->
+        <ul class="recommend_city">
+            <div>推荐城市：</div>
+            <li ng-repeat="item in recommend_city" ng-click="confirmCity(item)">{{ item }}</li>
+        </ul>
+        <!-- 所有城市 -->
+        <div ng-repeat="item in station_names" class="all_city">
+            <p class="city_title">{{ item.title }}</p>
+            <p ng-repeat="itemChild in item.elements" ng-click="confirmCity(itemChild.name)">
+                {{ itemChild.name }}
+            </p>
+        </div>
+    </div>
+</div>
