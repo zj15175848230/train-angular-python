@@ -13,6 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.6.6",
+    "angular-bootstrap-datetimepicker": "^1.1.4",
+    "angular-datepicker": "^1.0.5",
+    "angular-daterangepicker": "^0.2.3-alpha1",
+    "angular-moment-picker": "^0.10.1",
     "angular-sanitize": "^1.6.6",
     "angular-touch": "^1.6.6",
     "angular-ui-router": "^0.4.3",

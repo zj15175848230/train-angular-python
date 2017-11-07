@@ -1,0 +1,11 @@
+.train_ticket{
+	.time_show{
+		height: 50px;
+		width: 260px;
+		margin: 0 auto;
+		line-height: 50px;
+		span:nth-child(1) {
+			margin-right: 20px;
+		}
+	}
+}

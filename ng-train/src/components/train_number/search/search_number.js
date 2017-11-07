@@ -9,7 +9,7 @@ export default ($scope) => {
         $scope.search_number = val;
     }
     $scope.clearLocalstroage = () => { // 事件 清空历史记录
-        localStorage.setItem("history_h", "");
+        localStorage.removeItem("history_h");
         $scope.search_history = [];
     }
 

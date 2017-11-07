@@ -1,3 +1,23 @@
-<div class="train_number">
-    {{ data }}
+<div class="show_station">
+	<ng-header name="{{ start }}-{{ end }}"></ng-header>
+	<section class="main show_station_main">
+		<ul class="show_result" ng-repeat="item in show_result" ui-sref="show_number({ id: item.trainno })">
+			<li>{{ item.trainno }}</li>
+			<li class="station">
+				<i class="iconfont">&#xe60c;</i>
+				<span>{{ item.station }}</span>
+				<p>{{ item.departuretime }}</p>
+			</li>
+			<li class="jiantou">
+				<i></i>
+				<span>{{ item.costtime }}</span>
+			</li>
+			<li class="station">
+				<i class="iconfont end_i">&#xe6f4;</i>
+				<span>{{ item.endstation }}</span>
+				<p>{{ item.arrivaltime }}</p>
+			</li>
+		</ul>
+	</section>
+	<ng-footer></ng-footer>
 </div>

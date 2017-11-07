@@ -35,7 +35,7 @@ export default angular.module("my.router", [uiRouter, train])
             template: search_ticket,
             controller: "search_ticket"
         }).state("show_ticket", {
-            url: "/show_ticket",
+            url: "/show_ticket/:start/:end/:time",
             template: show_ticket,
             controller: "show_ticket"
         });

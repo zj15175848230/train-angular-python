@@ -9,18 +9,19 @@
             {{ item }}
         </li>
     </ul>
+    <!-- 右侧导航 -->
+    <ul class="latter_hash">
+        <li ng-repeat="item in latter_hash" ng-click="hashGo($index, $event);" ng-style="{ height: hashHeight, lineHeight: hashHeight }">
+            {{ item }}
+        </li>
+    </ul>
     <!-- 城市列表 -->
     <div class="scroll">
         <div class="now_city">
             {{ now_city || "北京" }}
             <span>当前城市</span>
         </div>
-        <!-- 右侧导航 -->
-        <ul class="latter_hash">
-            <li ng-repeat="item in latter_hash" ng-touchstart="hashGo($index);" ng-style="{ height: hashHeight, lineHeight: hashHeight }">
-                {{ item }}
-            </li>
-        </ul>
+        
         <!-- 推荐城市 -->
         <ul class="recommend_city">
             <div>推荐城市：</div>

@@ -1,14 +1,34 @@
-<div class="train_number">
-    <div class="search_train_number">
-        <input type="text" />
-        <button>余票查询</button>
-    </div>
-    <ul style="display: none">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
-    <div class="search_history">
+<div class="train_ticket">
+    <ng-header name="站站查询"></ng-header>
+    <section class="search_station_main main">
+        <ul class="start_end">
+            <li ng-click="chooseCity(start_station, true, $event)">{{ start_station }}</li>
+            <li class="iconfont" ng-click="tabStation();">&#xe604;</li>
+            <li ng-click="chooseCity(end_station, false);">{{ end_station }}</li>
+        </ul>
+        <!-- <div class="gt_sure">
+            <input type="checkbox" id="isgt" ng-model="is_high"/>
+            <label for="isgt">是否高铁</label>
+        </div> -->
+        <div class="time_show" ng-click="chooseTime();">
+            <span>出发日期：</span>
+            <span>2017-11-08</span>
+        </div>
+        <botton ng-click="routeGo();" locals="{{ [start_station + '@@' + end_station, 'ticket_locals'] }}">查询</botton>
+        <ul class="search_station_history">
+            <div class="del_history">
+                <p>输入记录</p>
+                <span class="iconfont" ng-click="clearLocalstroage();">&#xe615;</span>
 
-    </div>
+            </div>
+            <!-- 历史记录循环 -->
+            <li ng-repeat="item in history_station" ui-sref="show_station({ start: '{{ item[0] }}', end: '{{ item[1] }}', ishigh: false })">
+                <div class="iconfont">&#xe507;</div>
+                <div class="iconfont">{{ item[0] }}&#xe733;{{ item[1] }}</div>
+            </li>
+        </ul>
+    </section>
+    <ng-footer></ng-footer>
+    <ng-choose-time-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_time }"></ng-choose-time-rite>
+    <ng-choose-city-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-choose-city-rite>
 </div>

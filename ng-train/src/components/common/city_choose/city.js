@@ -1,11 +1,11 @@
 import angular from "angular";
 import station_names from "src/static/station_name/station.json";
-
+import httpService from "src/components/common/http_service/http_service";
 /*
 * 城市选择
 * */
-export default angular.module("cityChoose", [])
-    .controller("choose.city", ["$scope", "$http", "$timeout", ($scope, $http, $timeout) => {
+export default angular.module("cityChoose", [httpService])
+    .controller("choose.city", ["$scope", "httpService", "$timeout", ($scope, httpService, $timeout) => {
         // 推荐城市列表
         $scope.recommend_city = ["北京", "上海", "杭州", "广州", "南京", "成都", "西安", "郑州", "重庆", "合肥", "汉口", "武汉", "长沙", "武昌", "太原", "苏州", "厦门", "南昌", "沈阳", "天津", "深圳"];
         // 右侧导航列表
@@ -13,7 +13,7 @@ export default angular.module("cityChoose", [])
         $scope.station_names = station_names; // 所有城市列表
         $scope.search_name = ""; // 输入框输入的value
         $scope.show_query_result = false; // 输入框结果是否显示
-        $scope.hashHeight = (window.innerHeight - 55) / 22 + "px"; // 用js定义右侧导航的高度 平均沾满整个屏幕
+        $scope.hashHeight = (window.innerHeight - 55 - 40) / 22 + "px"; // 用js定义右侧导航的高度 平均沾满整个屏幕
 
         $scope.$on("chooseSearchToChild", (e, val) => { // 接收父组件传下来的值
             $scope.now_city = val; // 当前城市名
@@ -26,15 +26,15 @@ export default angular.module("cityChoose", [])
         $scope.confirmCity = (val) => { // 事件 确认选择的城市 将值传给父组件 并告诉父组件收起城市选择框
             $scope.$emit("chooseSearchToParent", val, false);
         }
-        $scope.hashGo = (index, e) => { // 事件 点击右侧导航，调到对应的位置
+        $scope.hashGo = (index, $event) => { // 事件 点击右侧导航，调到对应的位置
             if(index == 0){ // 当前
                 document.getElementsByClassName("scroll")[0].scrollTop = 0;
             }else if(index == 1){ // 推荐
                 document.getElementsByClassName("scroll")[0].scrollTop = 40;
             }else{ // a-z
-                document.getElementsByClassName("scroll")[0].scrollTop = document.getElementsByClassName("all_city")[index].offsetTop;
+                document.getElementsByClassName("scroll")[0].scrollTop = document.getElementsByClassName("all_city")[index - 2].offsetTop;
             }
-            console.log(e);
+            $event.stopPropagation();
         }
 
         $scope.$watch("search_name", (val) => { // 监听input输入值的变化
@@ -45,10 +45,7 @@ export default angular.module("cityChoose", [])
             }
             $timeout.cancel($scope.timer); // 清空延时器
             $scope.timer = $timeout(() => { // 延时器， 方式请求过多
-                $http({ // 获取输入值相关的城市名
-                    method: "GET",
-                    url: "/v1/train/query/station_name/" + val
-                }).then((res) => {
+                httpService.inputStationName(val).then((res) => {
                     $scope.query_result = res.data.data;
                     $scope.show_query_result = true;
                 }).catch((err) => {

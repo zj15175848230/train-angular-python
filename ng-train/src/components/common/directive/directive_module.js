@@ -1,11 +1,15 @@
 import angular from "angular";
 import footer from "./html/footer.html";
 import header from "./html/header.html";
+import includeCityHtml from "src/components/common/city_choose/city.html";
+import includeTimeHtml from "src/components/common/time_choose/time.html";
+import choose_city from "src/components/common/city_choose/city.js";
+import choose_time from "src/components/common/time_choose/time.js";
 
 /*
 *  自定义指令 头部标签 尾部标签 本地存储属性
 * */
-export default angular.module("directive_module", [])
+export default angular.module("directive_module", [choose_city, choose_time])
     .directive("ngFooter", () => { // 头部标签
         return {
             restrict: "E",
@@ -56,6 +60,20 @@ export default angular.module("directive_module", [])
                     }
                 });
             }
+        }
+    })
+    .directive("ngChooseCityRite", () => {
+        return {
+            register: "E",
+            replate: true,
+            template: includeCityHtml
+        }
+    })
+    .directive("ngChooseTimeRite", () => {
+        return {
+            register: "E",
+            replate: true,
+            template: includeTimeHtml
         }
     })
     .name;

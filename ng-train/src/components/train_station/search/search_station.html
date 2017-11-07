@@ -2,9 +2,9 @@
     <ng-header name="站站查询"></ng-header>
     <section class="search_station_main main">
         <ul class="start_end">
-            <li ng-touchstart="chooseCity(start_station, true);">{{ start_station }}</li>
+            <li ng-click="chooseCity(start_station, true, $event)">{{ start_station }}</li>
             <li class="iconfont" ng-click="tabStation();">&#xe604;</li>
-            <li ng-touchstart="chooseCity(end_station, false);">{{ end_station }}</li>
+            <li ng-click="chooseCity(end_station, false);">{{ end_station }}</li>
         </ul>
         <div class="gt_sure">
             <input type="checkbox" id="isgt" ng-model="is_high"/>

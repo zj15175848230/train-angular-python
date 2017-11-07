@@ -67,6 +67,7 @@
         overflow: hidden;
         overflow-y: scroll;
         border-top: 1px solid #666;
+        z-index: 2;
         .del_history{
             display: flex;
             height: 40px;

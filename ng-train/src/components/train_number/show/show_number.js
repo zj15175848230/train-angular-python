@@ -1,15 +1,3 @@
-// import g from "./../../../static/test-data/gt.json";
-// import d from "./../../../static/test_data/dc.json";
-// import c from "./../../../static/test_data/c.json";
-// import k from "./../../../static/test_data/k.json";
-// import p from "./../../../static/test_data/p.json";
-// import s from "./../../../static/test_data/s.json";
-// import t from "./../../../static/test_data/t.json";
-// import y from "./../../../static/test_data/y.json";
-// import z from "./../../../static/test_data/z.json";
-// const testData = {
-//     g, d, c, k, p, s, t, y, z
-// }
 export default ($scope, httpService, $stateParams) => {
     $scope.train_info = null; // 车次信息
     $scope.top_scroll = 0; // 卷曲长度

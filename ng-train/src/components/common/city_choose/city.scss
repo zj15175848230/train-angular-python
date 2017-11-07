@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: 3;
     background: #fff;
     transform: translateY(100%);
     //transform: translateX(0);
@@ -21,6 +21,7 @@
         bottom: 0;
         overflow: hidden;
         overflow-y: scroll;
+        z-index: 4;
     }
     .query_result{
         position: absolute;
@@ -29,7 +30,7 @@
         bottom: 0;
         right: 0;
         overflow: hidden;
-        z-index: 100002;
+        z-index: 6;
         background: #fff;
         overflow-y: scroll;
         li {
@@ -79,17 +80,20 @@
         }
     }
     .latter_hash{
-        position: fixed;
+        position: absolute;
         top: 55px;
         right: 0;
-        width: 30px;
+        width: 50px;
+        bottom: 0;
         text-align: center;
+        z-index: 5;
         li{
             color: blue;
+            text-indent: 20px;
             &:nth-child(1), &:nth-child(2){
-                height: 20px!important;
+                height: 20px !important;
                 font-size: 12px;
-                line-height: 20px!important;
+                line-height: 20px !important;
             }
         }
 

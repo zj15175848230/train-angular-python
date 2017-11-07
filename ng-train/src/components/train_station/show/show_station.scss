@@ -1,0 +1,73 @@
+.show_station{
+	.show_station_main{
+		.show_result{
+			display: flex;
+			border-bottom: 1px solid #e0e0e0;
+			li{
+				height: 50px;
+				line-height: 50px;
+				width: 17%;
+				text-align: center;	
+			}
+			.station{
+				display: flex;
+				width: 26%;
+				flex-wrap: wrap;
+				line-height: normal;
+				i{
+					height: 25px;
+					display: block;
+					font-size: 24px;
+					line-height: 25px;
+					margin-right: 2px;
+				}
+				span{
+					display: block;
+					height: 25px;
+					line-height: 25px;
+				}
+				p {
+					width: 100%;
+					font-size: 12px;
+					text-indent: 4px;
+					text-align: left;
+				}
+				.end_i{
+					font-size: 17px;
+				}
+			}
+			.jiantou{
+				text-align: left;
+				line-height: 20px;
+				width: 31%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding-top: 11px;
+				i{
+					display: block;
+					width: 75%;
+					height: 1px;
+					background: #000;
+					position: relative;
+					&:before{
+						content: "";
+						display: block;
+						height: 1px;
+						width: 10px;
+						background: #000;
+						transform: rotate(45deg);
+						position: absolute;
+						top: -4px;
+						right: 0;
+					}
+				}
+				span{
+					width: 75%;
+					text-align: center;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

@@ -8,16 +8,17 @@ export default ($scope, $state) => {
         $scope.start_station = $scope.end_station;
         $scope.end_station = centerVar;
     }
-    $scope.chooseCity = (val, flag) => { // 事件  打开城市选择 并 将当前城市传给子组件
+    $scope.chooseCity = (val, flag, $event) => { // 事件  打开城市选择 并 将当前城市传给子组件
         $scope.show_choose_city = !$scope.show_choose_city;
         $scope.$broadcast("chooseSearchToChild", val);
         $scope.stationFlag = flag;
+        $event.stopPropagation();
     }
     $scope.routeGo = () => { // 事件 确认查询
         $state.go("show_station", {
             start: $scope.start_station,
             end: $scope.end_station,
-            ishigh: $scope.is_high
+            ishigh: Number($scope.is_high)
         })
     }
 
@@ -39,7 +40,7 @@ export default ($scope, $state) => {
         return el.split("@@");
     });
     $scope.clearLocalstroage = () => { // 事件 清空历史记录
-        localStorage.setItem("station_locals", "");
+        localStorage.removeItem("station_locals");
         $scope.history_station = [];
     }
 }
