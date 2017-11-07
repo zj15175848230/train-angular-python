@@ -4,7 +4,7 @@
         <ul class="start_end">
             <li ng-click="chooseCity(start_station, true, $event)">{{ start_station }}</li>
             <li class="iconfont" ng-click="tabStation();">&#xe604;</li>
-            <li ng-click="chooseCity(end_station, false);">{{ end_station }}</li>
+            <li ng-click="chooseCity(end_station, false, $event);">{{ end_station }}</li>
         </ul>
         <div class="gt_sure">
             <input type="checkbox" id="isgt" ng-model="is_high"/>
@@ -24,5 +24,5 @@
         </ul>
     </section>
     <ng-footer></ng-footer>
-    <ng-include-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-include-rite>
+    <ng-choose-city-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-choose-city-rite>
 </div>

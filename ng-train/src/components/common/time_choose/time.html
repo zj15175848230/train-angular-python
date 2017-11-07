@@ -6,8 +6,15 @@
         moment-picker="ctrl.birthday" 
         locale="中文" 
         format="YYYY-MM-D"
-        min-view="month">
+        min-view="month"
+        todayBtn=true>
     Mon anniversaire est le {{ ctrl.birthday }}
     </div> -->
-    <datetimepicker data-ng-model="data.date"></datetimepicker>
+    <!-- <datetimepicker data-ng-model="data.date"></datetimepicker> -->
+    <datepicker
+        date-set="true"
+        datepicker-show="true"
+        date-format="YYYY-MM-DD">
+        <input ng-model="date" type="text" />
+    </datepicker>
 </div>
