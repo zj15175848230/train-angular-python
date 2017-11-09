@@ -6,3 +6,6 @@ for str_name in data.station_name:
         session.execute("insert into station_name(title, name, en, s) values(\"{title}\", \"{name}\", \"{en}\", \"{s}\")".format(title=str_name["title"], name=item["name"], en=item["en"], s=item["s"]))
 session.commit()
 session.close()
+
+
+
