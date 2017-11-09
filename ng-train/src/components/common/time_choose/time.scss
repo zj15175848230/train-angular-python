@@ -1,5 +1,13 @@
 .time_chajian{
-	table{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	.datepicker_css {
 		width: 100%;
+		height: 400px;
+	}
+	.angular-datepicker-input{
+		transform: translate(-1000px);
 	}
 }

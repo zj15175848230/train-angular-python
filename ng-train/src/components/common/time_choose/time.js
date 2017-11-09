@@ -1,20 +1,25 @@
 import angular from "angular";
-import httpService from "src/components/common/http_service/http_service";
-// import "angular-datepicker";
-// import "angular-datepicker/dist/index.min.css";
+import my_filter from "src/components/common/filter/filter";
 import "angularjs-datepicker";
 import "angularjs-datepicker/dist/angular-datepicker.min.css";
+
 /*
-* 城市选择
+* 日期选择
 * */
-export default angular.module("timeChoose", [httpService, "720kb.datepicker"])
+
+export default angular.module("timeChoose", ["720kb.datepicker", my_filter])
     .controller("choose.time", ["$scope", ($scope) => {
         $scope.hideCity = () => {  // 事件 点击隐藏城市选择界面
             $scope.$emit("hideChooseCity", false); // 向父controller传递数据 告诉父组件开始收起城市选择框
         }
-        $scope.minDate = moment().format('YYYY-MM-DD');
-        $scope.maxDate = moment().subtract(30, "day").format('YYYY-MM-DD');
-        // $scope.startDate = 
-        $scope.da = new Date()
+        let d = Date.now();
+        $scope.limit_min = d; // 当前时间
+        $scope.limit_max = d + 30 * 24 * 60 * 60 * 1000; // 往后30天
+        $scope.$watch("start_date", (str) => { // 选择日期
+            if(str != undefined && str != "Invalid Date"){
+                $scope.$emit("choose_time_to_parent", str);
+                $scope.$emit("hideChooseCity", false);
+            }
+        })
     }])
     .name;

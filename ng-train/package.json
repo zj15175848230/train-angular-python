@@ -38,6 +38,7 @@
     "html-withimg-loader": "^0.1.16",
     "jquery": "^3.2.1",
     "ng-cache-loader": "^0.0.26",
+    "ng-datepicker": "^1.0.2",
     "ngtemplate-loader": "^2.0.1",
     "node-sass": "^4.5.3",
     "postcss-loader": "^0.11.0",

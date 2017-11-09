@@ -12,7 +12,7 @@
         </div> -->
         <div class="time_show" ng-click="chooseTime();">
             <span>出发日期：</span>
-            <span>2017-11-08</span>
+            <span>{{ start_date | time_filter }}</span>
         </div>
         <botton ng-click="routeGo();" locals="{{ [start_station + '@@' + end_station, 'ticket_locals'] }}">查询</botton>
         <ul class="search_station_history">
@@ -29,6 +29,6 @@
         </ul>
     </section>
     <ng-footer></ng-footer>
-    <ng-choose-time-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_time }"></ng-choose-time-rite>
-    <ng-choose-city-rite  class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-choose-city-rite>
+    <ng-choose-time-rite class="choose_city" ng-class="{ show_choose_city: show_choose_time }"></ng-choose-time-rite>
+    <ng-choose-city-rite class="choose_city" ng-class="{ show_choose_city: show_choose_city }"></ng-choose-city-rite>
 </div>
