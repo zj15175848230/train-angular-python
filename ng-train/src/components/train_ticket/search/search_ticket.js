@@ -4,6 +4,8 @@ export default ($scope, $state) => {
     // $scope.is_high = false; // 是否高铁
     $scope.start_station = "长沙"; // 始发站
     $scope.end_station = "北京"; // 终点站
+    let d = new Date();
+    $scope.start_date = Date.now();
     $scope.tabStation = () => { // 事件  交换车站
         let centerVar = $scope.start_station;
         $scope.start_station = $scope.end_station;
@@ -16,13 +18,14 @@ export default ($scope, $state) => {
         $event.stopPropagation();
     }
     $scope.chooseTime = () => {
+        document.getElementsByClassName("angular-datepicker-input")[0].focus();
     	$scope.show_choose_time = !$scope.show_choose_time;
     }
     $scope.routeGo = () => { // 事件 确认查询
         $state.go("show_ticket", {
             start: $scope.start_station,
             end: $scope.end_station,
-            time: "123"
+            time: $scope.start_date
         })
     }
 
@@ -38,7 +41,9 @@ export default ($scope, $state) => {
             $scope.end_station = val;
         }
     });
-
+    $scope.$on("choose_time_to_parent", (e, val) => {
+        $scope.start_date = val;
+    })
     let localsData = localStorage.getItem("ticket_locals"); // 获取站站查询的历史记录
     let localsJson = localsData ? JSON.parse(localsData) : [];
     $scope.history_station = localsJson.map((el, index) => {
