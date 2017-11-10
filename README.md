@@ -1,6 +1,6 @@
 ```
 for a in b:
-	print(a)
+  print(a)
 ```
 >数据结构
 >>树
