@@ -1,5 +1,5 @@
 [![]](http://www.baidu.com)
-![baidu](http://www.baidu.com/img/bdlogo.gif "百度logo")
+[baidu]:http://www.baidu.com/img/bdlogo.gif "百度logo"
 >数据结构
 >>树
 >>>二叉树
