@@ -1,3 +1,5 @@
+![](http://www.baidu.com/img/bdlogo.gif)
+
 >数据结构
 >>树
 >>>二叉树
