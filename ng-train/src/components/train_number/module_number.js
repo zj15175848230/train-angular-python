@@ -7,7 +7,7 @@ import pull_update from "src/components/common/directive/pull_update";
 import my_filter from "src/components/common/filter/filter";
 export default angular.module("train_number", [directive_module, httpService, pull_update, my_filter])
     .controller("search_number", ["$scope", search_number]) // 车次查询 controller
-    .controller("show_number", ["$scope", "httpService", "$stateParams",show_number]) // 车次展示 controller
+    .controller("show_number", ["$scope", "train_number_service", "$stateParams", show_number]) // 车次展示 controller
     .filter("filterTrainNumber", () => { // 过滤器对车次进行过滤
         return (arr, val) => {  // 只显示符合条件的前15条
             var newArr = [];

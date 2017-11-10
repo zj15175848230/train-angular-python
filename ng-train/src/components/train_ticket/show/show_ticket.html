@@ -1,3 +1,40 @@
-<div class="train_number">
-    {{ data }}
+<div class="show_ticket">
+    <ng-header name="{{ start }}<>{{ end }} {{ timer | time_filter}}"></ng-header>
+    <section class="show_number_main main" ng-pull-update>
+        <div class="cover" ng-style="{ height: top_scroll + 'px' }">
+            <img src="./../../../images/qwe.gif" alt="" />
+        </div>
+        <ul>
+            <li>
+                <ul class="base_message">
+                    <li>车次</li>
+                    <li>出发时间</li>
+                    <li>到站时间</li>
+                    <li>用时</li>
+                </ul>
+            </li>
+            <!-- 循环展示当前余票信息 -->
+            <li ng-repeat="item in train_info" ui-sref="show_number({ id: item.trainno })">
+                <ul class="base_message" >
+                    <li>{{ item.trainno }}</li>
+                    <li>{{ item.starttime }}</li>
+                    <li>{{ item.endtime }}</li>
+                    <li>{{ item.costtime }}</li>
+                </ul>
+                <ul class="ticket_number">
+                	<li>商务座：<span ng-class="{ has: item.sw == '有' || item.sw * 1 > 0 }">{{ item.sw }}</span></li>
+                	<li>特等座：<span ng-class="{ has: item.td == '有' || item.td * 1 > 0 }">{{ item.td }}</span></li>
+                	<li>一等座：<span ng-class="{ has: item.yd == '有' || item.yd * 1 > 0 }">{{ item.yd }}</span></li>
+                	<li>二等座：<span ng-class="{ has: item.ed == '有' || item.ed * 1 > 0 }">{{ item.ed }}</span></li>
+                	<li>高级软卧：<span ng-class="{ has: item.gr == '有' || item.gr * 1 > 0 }">{{ item.gr }}</span></li>
+                	<li>软卧：<span ng-class="{ has: item.rw == '有' || item.rw * 1 > 0 }">{{ item.rw }}</span></li>
+                	<li>硬卧：<span ng-class="{ has: item.yw == '有' || item.yw * 1 > 0 }">{{ item.yw }}</span></li>
+                	<li>软座：<span ng-class="{ has: item.rz == '有' || item.rz * 1 > 0 }">{{ item.rz }}</span></li>
+                	<li>硬座：<span ng-class="{ has: item.yz == '有' || item.yz * 1 > 0 }">{{ item.yz }}</span></li>
+                	<li>无座：<span ng-class="{ has: item.wz == '有' || item.wz * 1 > 0 }">{{ item.wz }}</span></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <ng-footer></ng-footer>
 </div>

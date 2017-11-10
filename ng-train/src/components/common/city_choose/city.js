@@ -5,7 +5,7 @@ import httpService from "src/components/common/http_service/http_service";
 * 城市选择
 * */
 export default angular.module("cityChoose", [httpService])
-    .controller("choose.city", ["$scope", "httpService", "$timeout", ($scope, httpService, $timeout) => {
+    .controller("choose.city", ["$scope", "city_choose_service", "$timeout", ($scope, city_choose_service, $timeout) => {
         // 推荐城市列表
         $scope.recommend_city = ["北京", "上海", "杭州", "广州", "南京", "成都", "西安", "郑州", "重庆", "合肥", "汉口", "武汉", "长沙", "武昌", "太原", "苏州", "厦门", "南昌", "沈阳", "天津", "深圳"];
         // 右侧导航列表
@@ -45,7 +45,7 @@ export default angular.module("cityChoose", [httpService])
             }
             $timeout.cancel($scope.timer); // 清空延时器
             $scope.timer = $timeout(() => { // 延时器， 方式请求过多
-                httpService.inputStationName(val).then((res) => {
+                city_choose_service.inputStationName(val).then((res) => {
                     $scope.query_result = res.data.data;
                     $scope.show_query_result = true;
                 }).catch((err) => {

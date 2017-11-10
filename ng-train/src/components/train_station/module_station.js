@@ -6,5 +6,5 @@ import httpService from "src/components/common/http_service/http_service";
 
 export default angular.module("train_station", [directive_module, httpService])
     .controller("search_station", ["$scope", "$state", search_station])
-    .controller("show_station", ["$scope", "$stateParams", "httpService", show_station])
+    .controller("show_station", ["$scope", "$stateParams", "train_station_service", show_station])
     .name;
