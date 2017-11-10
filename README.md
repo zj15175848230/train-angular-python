@@ -1,5 +1,7 @@
-[![]](http://www.baidu.com)
-[baidu]:http://www.baidu.com/img/bdlogo.gif "百度logo"
+```
+for a in b:
+	print(a)
+```
 >数据结构
 >>树
 >>>二叉树
