@@ -17,4 +17,6 @@ train
 	
 ahi <br>
 	ahi<br>
-ahi
+`ahi`
+
+[点我查看](http://www.zjweb.cc)
