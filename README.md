@@ -6,8 +6,9 @@ train
 	npm run build
 ### python
 	cd py-train/src
-	先安装python3
-	然后安装pip
+	先安装python3 忽略
+	然后安装pip 忽略
+	\------------------------
 	pip install flask pymysql sqlalchemy
 	cd mysql_conf
 	mysql -uroot -p < sql-config.sql
