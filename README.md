@@ -1,9 +1,11 @@
 train
 ========================
+
 ### 前端
 	cd ng-train
 	npm install
 	npm run build
+
 ### python
 	cd py-train/src
 	先安装python3 忽略
