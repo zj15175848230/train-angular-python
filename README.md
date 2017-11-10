@@ -1,4 +1,4 @@
-[2]: http://www.baidu.com/img/bdlogo.gif "baidu"
+[2](http://www.baidu.com/img/bdlogo.gif "baidu")
 w	qwe
 ```
 for a in b:
