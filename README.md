@@ -1,5 +1,5 @@
 train
-====
+==
 前端
 	npm install
 	npm run build
