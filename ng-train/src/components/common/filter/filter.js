@@ -20,7 +20,12 @@ export default angular.module("my.filter", [])
     })
     .filter("time_filter", () => {
     	return (val, b) => {
-    		let d = new Date(val);
+            var d = null;
+            if(val * 1){
+    		    d = new Date(val * 1);
+            }else{
+                d = new Date(val);
+            }
     		var init_d = `${ d.getFullYear() }-${ d.getMonth() < 9 ? "0" + ( d.getMonth() + 1 ) : d.getMonth() + 1 }-${ d.getDate() < 10 ? "0" + d.getDate() : d.getDate() }`;
     		if(!b) return init_d
     		return init_d.split("-").join("/");

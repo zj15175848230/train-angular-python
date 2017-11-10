@@ -1,5 +1,5 @@
 <div class="show_station">
-	<ng-header name="{{ start }}-{{ end }}"></ng-header>
+	<ng-header name="{{ start }}<>{{ end }}"></ng-header>
 	<section class="main show_station_main">
 		<ul class="show_result" ng-repeat="item in show_result" ui-sref="show_number({ id: item.trainno })">
 			<li>{{ item.trainno }}</li>

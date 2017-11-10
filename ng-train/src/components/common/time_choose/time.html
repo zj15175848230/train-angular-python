@@ -3,7 +3,7 @@
         <a ng-click="hideCity();" href="javascript:;" class="iconfont">&#xe664;</a>
     </div>
 
-    <datepicker class="datepicker_css" date-set-hidden="true" date-format="yyyy-MM-dd" date-set="2017/11/09" date-min-limit="{{ limit_min | time_filter: true}}" date-max-limit="{{ limit_max | time_filter: true }}" date-typer="true" date-disabled-dates="[]">
+    <datepicker date-set-hidden="true" date-format="yyyy-MM-dd" date-set="2017/11/09" date-min-limit="{{ limit_min | time_filter: true }}" date-max-limit="{{ limit_max | time_filter: true }}" date-typer="true" date-disabled-dates="[]">
         <input ng-model="start_date" type="text" class="angular-datepicker-input" autofocus="autofocus" />
     </datepicker>
 </div>

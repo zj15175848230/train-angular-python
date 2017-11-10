@@ -1,8 +1,8 @@
-export default ($scope, httpService, $stateParams) => {
+export default ($scope, train_number_service, $stateParams) => {
     $scope.train_info = null; // 车次信息
     $scope.top_scroll = 0; // 卷曲长度
     $scope.train_number = null; // 车次名字
-    httpService.trainNumber($stateParams.id).then((response) => { // 获取车次信息  httpServer
+    train_number_service.trainNumber($stateParams.id).then((response) => { // 获取车次信息  httpServer
         let result = response.data.result;
         $scope.train_info = result.list;
         $scope.train_number = result.type + result.trainno + "次列车时刻表";

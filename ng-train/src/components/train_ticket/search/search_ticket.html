@@ -22,7 +22,7 @@
 
             </div>
             <!-- 历史记录循环 -->
-            <li ng-repeat="item in history_station" ui-sref="show_station({ start: '{{ item[0] }}', end: '{{ item[1] }}', ishigh: false })">
+            <li ng-repeat="item in history_station" ui-sref="show_ticket({ start: '{{ item[0] }}', end: '{{ item[1] }}', time: start_date })">
                 <div class="iconfont">&#xe507;</div>
                 <div class="iconfont">{{ item[0] }}&#xe733;{{ item[1] }}</div>
             </li>

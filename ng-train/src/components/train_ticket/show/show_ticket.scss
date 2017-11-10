@@ -1,0 +1,40 @@
+.show_ticket{
+	height: 100%;
+    width: 100%;
+    .show_number_main{
+        & > ul > li{
+            width: 100%;
+            word-break: break-all;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            .base_message{
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                display: flex;
+                & > li{
+                    overflow: hidden;
+                    width: 25%;
+                }
+            }
+            .ticket_number{
+            	display: flex;
+            	font-size: 10px;
+            	flex-wrap: wrap;
+            	padding: 0 10px;
+            	li{
+            		line-height: 20px;
+            		width: 20%;
+            		text-align: left;
+            		span{
+            			color: #DCE;
+            		}
+            		.has{
+						color: green;
+            		}
+            	}
+            }
+        }
+
+    }
+}

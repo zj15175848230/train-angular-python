@@ -7,5 +7,5 @@ import my_filter from "src/components/common/filter/filter";
 
 export default angular.module("train_ticket", [httpService, directive_module, my_filter])
     .controller("search_ticket", ["$scope", "$state", search_ticket])
-    .controller("show_ticket", ["$scope", "httpService", show_ticket])
+    .controller("show_ticket", ["$scope", "train_ticket_service", "$stateParams", "$filter", show_ticket])
     .name;

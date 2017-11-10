@@ -6,7 +6,6 @@ import "angularjs-datepicker/dist/angular-datepicker.min.css";
 /*
 * 日期选择
 * */
-
 export default angular.module("timeChoose", ["720kb.datepicker", my_filter])
     .controller("choose.time", ["$scope", ($scope) => {
         $scope.hideCity = () => {  // 事件 点击隐藏城市选择界面
