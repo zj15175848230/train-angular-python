@@ -13,3 +13,8 @@ train
 	然后安装pip
 	pip install flask pymysql sqlalchemy
 	nohup python3 query-station.py > my.log &
+	
+	
+ahi
+ahi
+ahi
