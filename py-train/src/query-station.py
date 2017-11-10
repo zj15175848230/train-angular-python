@@ -18,5 +18,8 @@ def station_name(params_s):
     }
     return json.dumps(result)
 
+@app.route("/", methods=["GET"])
+def test():
+    return "Hello World!"
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
