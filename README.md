@@ -1,7 +1,10 @@
+[2]: http://www.baidu.com/img/bdlogo.gif "baidu"
+w
 ```
 for a in b:
   print(a)
 ```
+
 >数据结构
 >>树
 >>>二叉树
